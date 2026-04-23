@@ -1,3 +1,4 @@
+import json
 import re
 
 DATASET = 'tweets.csv'
@@ -109,6 +110,6 @@ for i in range(len(tweets)):
             tweet_texts.append(line)
 print("Number of tweets after filtering out retweets and just URLs: %d" % len(tweet_texts))
 
-print("First 20 tweets:")
-for i in range(20):
-    print("%d: %s" % (i+1, tweet_texts[i]))
+# Save the filtered tweets to a JSON file.
+with open('tweets.json', 'w', encoding='utf-8') as f:
+    json.dump(tweet_texts, f, ensure_ascii=False, indent=2)

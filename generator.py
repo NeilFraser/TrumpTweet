@@ -3,7 +3,7 @@ import random
 import re
 
 
-SIZE = 2  # The n-gram size to use for the database.
+SIZE = 3  # The n-gram size to use for the database.
 INPUT_FILE = 'tweets.json'
 OUTPUT_FILE = 'fake_tweets_%d.json' % SIZE
 

@@ -2,6 +2,9 @@ import json
 import random
 import re
 
+# Creates a Markov chain database of token frequencies from the input tweets,
+# and then uses it to generate new fake tweets.
+# The n-gram size can be adjusted by changing the SIZE constant.
 
 SIZE = 3  # The n-gram size to use for the database.
 INPUT_FILE = 'tweets.json'

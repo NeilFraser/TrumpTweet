@@ -6,3 +6,13 @@ glove/fake_tweets_2.json
 glove/fake_tweets_3.json
 glove/generator.py
 glove/tweets.csv
+
+# Large model files
+transformer_distilbert_output/model.safetensors
+*.safetensors
+
+# Model checkpoints and weights
+*.pth
+*.pt
+*.h5
+*.ckpt

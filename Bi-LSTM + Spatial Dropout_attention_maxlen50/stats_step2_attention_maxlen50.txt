@@ -1,0 +1,5 @@
+STEP 2: ATTENTION MECHANISM REPORT
+----------------------------------
+Max Sequence Length: 50
+Final Test Accuracy: 81.38%
+Epochs: 5

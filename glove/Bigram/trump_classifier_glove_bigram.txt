@@ -1,0 +1,15 @@
+python trump_classifier_glove_bigram.py
+Loading datasets for Bigram detection...
+Loading GloVe embeddings from glove.6B.100d.txt...
+Successfully mapped 16041/36180 words from GloVe.
+
+Starting Training with GloVe-enhanced Bi-LSTM (Bigram Detection)...
+Epoch 1/5 -> Train Loss: 0.5024 | Val Loss: 0.4091
+Epoch 2/5 -> Train Loss: 0.3256 | Val Loss: 0.3417
+Epoch 3/5 -> Train Loss: 0.2418 | Val Loss: 0.3236
+Epoch 4/5 -> Train Loss: 0.1826 | Val Loss: 0.3641
+Epoch 5/5 -> Train Loss: 0.1387 | Val Loss: 0.3461
+
+Final Test Accuracy (Bigram + GloVe): 87.99%
+[SUCCESS] Model saved as 'trump_classifier_glove_bigram.pth'
+[SUCCESS] Learning curve saved as 'learning_curve_glove_bigram.png'

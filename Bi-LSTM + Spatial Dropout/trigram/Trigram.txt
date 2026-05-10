@@ -1,0 +1,21 @@
+Starting training with Advanced Bi-LSTM + Spatial Dropout...
+
+Epoch 1/5 -> Train Loss: 0.5552 | Val Loss: 0.5133
+
+Epoch 2/5 -> Train Loss: 0.4336 | Val Loss: 0.4818
+
+Epoch 3/5 -> Train Loss: 0.3680 | Val Loss: 0.4204
+
+Epoch 4/5 -> Train Loss: 0.3173 | Val Loss: 0.4243
+
+Epoch 5/5 -> Train Loss: 0.2710 | Val Loss: 0.4197
+
+
+
+Evaluating on Trigram test set...
+
+Final Trigram Test Accuracy: 82.66%
+
+
+
+All files saved. Ready for analysis.

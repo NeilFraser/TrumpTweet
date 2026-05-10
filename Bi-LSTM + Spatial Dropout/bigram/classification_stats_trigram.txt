@@ -1,0 +1,20 @@
+
+TRUMP TWEET CLASSIFIER - TRIGRAM REPORT
+-------------------------------------------
+Dataset Statistics:
+- Total Samples: 90908
+- Real Tweets: 45454
+- Fake Tweets (Trigram): 45454
+- Training Set Size: 72726
+- Validation Set Size: 9090
+- Test Set Size: 9092
+
+Training History:
+Epoch 1: Train Loss = 0.5552, Val Loss = 0.5133
+Epoch 2: Train Loss = 0.4336, Val Loss = 0.4818
+Epoch 3: Train Loss = 0.3680, Val Loss = 0.4204
+Epoch 4: Train Loss = 0.3173, Val Loss = 0.4243
+Epoch 5: Train Loss = 0.2710, Val Loss = 0.4197
+
+Final Performance:
+- Trigram Test Accuracy: 82.66%

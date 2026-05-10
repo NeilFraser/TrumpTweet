@@ -1,0 +1,27 @@
+
+TRUMP TWEET CLASSIFIER - OPTIMIZATION STEP 1 (Reduced MAX_LEN)
+--------------------------------------------------------------
+Hyperparameters:
+- Max Sequence Length: 35 (Reduced from 50)
+- Epochs: 5
+- Batch Size: 32
+- Learning Rate: 0.001
+
+Dataset Statistics:
+- Total Samples: 90908
+- Real Tweets: 45454
+- Fake Tweets (Trigram): 45454
+- Training Set Size: 72726
+- Validation Set Size: 9090
+- Test Set Size: 9092
+- Vocabulary Size: 36162
+
+Training History:
+Epoch 1: Train Loss = 0.5611, Val Loss = 0.5178
+Epoch 2: Train Loss = 0.4441, Val Loss = 0.4752
+Epoch 3: Train Loss = 0.3825, Val Loss = 0.4391
+Epoch 4: Train Loss = 0.3320, Val Loss = 0.4404
+Epoch 5: Train Loss = 0.2842, Val Loss = 0.4200
+
+Final Performance:
+- Trigram Test Accuracy: 81.98%

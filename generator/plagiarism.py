@@ -47,5 +47,5 @@ def plagiarism(size):
     print("%d-%d%%,%d" % (i * 10, (i + 1) * 10 - 1, count))
 
 
-for size in range(2, 11):
+for size in range(3, 12):
   plagiarism(size)

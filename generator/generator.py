@@ -6,7 +6,7 @@ import re
 # and then uses it to generate new fake tweets.
 # The n-gram size can be adjusted by changing the SIZE constant.
 
-SIZE = 3  # The n-gram size to use for the database.
+SIZE = 4  # The n-gram size to use for the database.
 INPUT_FILE = 'tweets.json'
 OUTPUT_FILE = 'fake_tweets_%d.json' % SIZE
 
@@ -96,11 +96,11 @@ def generate_text(data, size):
         break
   return text
 
-data = build_database(tokenized_tweets, SIZE)
+data = build_database(tokenized_tweets, SIZE - 1)
 
 fake_tweets = []
 for i in range(len(tweets)):
-  text = generate_text(data, SIZE)
+  text = generate_text(data, SIZE - 1)
   fake_tweets.append(detokenize(text))
 
 #print(detokenize(text))

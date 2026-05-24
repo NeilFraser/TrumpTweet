@@ -7,29 +7,13 @@ import re
 # The n-gram size can be adjusted by changing the SIZE constant.
 
 SIZE = 4  # The n-gram size to use for the database.
-INPUT_FILE = 'tweets.json'
+INPUT_FILE = '../tokenized_tweets.json'
 OUTPUT_FILE = 'fake_tweets_%d.json' % SIZE
 
-tweets = json.load(open(INPUT_FILE, 'r', encoding='utf-8'))
 
-def tokenize(tweet):
-  # Replace URLs with a special token.
-  tweet = re.sub(r'https?://t\.co/\w+', '{URL}', tweet)
-  tweet = re.sub(r'\n', '{CR}', tweet)
-  # Wrap punctuation in special tokens, so that they get treated as separate tokens.
-  tweet = re.sub(r'([ \.!?,;:])', r'{\1}', tweet)
-  tweet = '{START}' + tweet + '{END}'
-  # Inject null characters around the special tokens, so that we can split on them.
-  tweet = re.sub(r'{', '\0{', tweet)
-  tweet = re.sub(r'}', '}\0', tweet)
-  tweet = re.sub(r'\0+', '\0', tweet)  # No repeated null characters.
-  # Split on the null character.
-  tokens = tweet.split('\0')
-  # Remove empty tokens.
-  tokens = [token for token in tokens if token]
-  return tokens
-
-
+# Reassemble tokens back into a tweet.
+# "{START}", "Make", "{ }", "America", "{ }", "great", "{!}", "{END}" ->
+# "Make America great!"
 def detokenize(tokens):
   # Remove the special tokens.
   tokens = [token for token in tokens if token not in ['{START}', '{END}']]
@@ -41,14 +25,12 @@ def detokenize(tokens):
   tweet = re.sub(r'\{([ \.!?,;:“”&])\}', r'\1', tweet)
   return tweet
 
-
+# Create a plausible (but fake) Twitter URL.
+# E.g. https://t.co/3fs1oPVnAx
 def randomUrl():
   # E.g. https://t.co/3fs1oPVnAx
   return 'https://t.co/' + ''.join(random.choices('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789', k=10))
 
-
-# Tokenize the tweets.
-tokenized_tweets = [tokenize(tweet) for tweet in tweets]
 
 # Build a database of token frequencies, with n-gram of the specified size.
 def build_database(tokenized_tweets, size):
@@ -69,10 +51,6 @@ def build_database(tokenized_tweets, size):
         grams.pop(0)
   return data
 
-
-# Dump the database to a file, so that we can inspect it and use it in other programs.
-#with open('data.json', 'w', encoding='utf-8') as f:
-#  json.dump(data, f, indent=2, ensure_ascii=False)
 
 def generate_text(data, size):
   text = []  # Start generating text.
@@ -96,13 +74,19 @@ def generate_text(data, size):
         break
   return text
 
+
+tokenized_tweets = json.load(open(INPUT_FILE, 'r', encoding='utf-8'))
+
+print("Building database...")
 data = build_database(tokenized_tweets, SIZE - 1)
 
+print("Generating %d fake tweets..." % len(tokenized_tweets))
 fake_tweets = []
-for i in range(len(tweets)):
+for i in range(len(tokenized_tweets)):
   text = generate_text(data, SIZE - 1)
   fake_tweets.append(detokenize(text))
 
-#print(detokenize(text))
-
+print("Saving fake tweets to %s..." % OUTPUT_FILE)
 json.dump(fake_tweets, open(OUTPUT_FILE, 'w', encoding='utf-8'), indent=2, ensure_ascii=False)
+
+print("Done.")

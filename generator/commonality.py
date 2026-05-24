@@ -1,6 +1,7 @@
 from difflib import SequenceMatcher
 import json
 import re
+import time
 
 # Compare real tweets against each other to get a baseline for how much
 # commonality there is between real tweets.  This is not plagiarism,
@@ -19,6 +20,7 @@ for i in range(len(real_tweets)):
 test_tweets = real_tweets[:SAMPLE_SIZE]
 corpus_tweets = real_tweets[SAMPLE_SIZE:]
 
+start = time.time()
 total = 0
 count = 0
 for test_tweet in test_tweets:
@@ -32,5 +34,7 @@ for test_tweet in test_tweets:
   total += longest / len(test_tweet)
   count += 1
   print("%d Tweet result: %.2f%%" % (count, longest / len(test_tweet) * 100))
+elapsed = time.time() - start
+print("Elapsed time: %f" % elapsed)
 
 print("Average longest common substring length as percentage of test tweet length: %.2f%%" % (total / SAMPLE_SIZE * 100))

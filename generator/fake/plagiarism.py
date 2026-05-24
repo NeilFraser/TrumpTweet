@@ -12,7 +12,7 @@ SAMPLE_SIZE = 100  # Number of fake tweets to sample for comparison.
 def plagiarism(size):
   print ("Comparing fake tweets with real tweets using n-gram size %d..." % size)
   FAKE_FILE = 'fake_tweets_%d.json' % size
-  REAL_FILE = 'tweets.json'
+  REAL_FILE = '../tweets.json'
   fake_tweets = json.load(open(FAKE_FILE, 'r', encoding='utf-8'))
   real_tweets = json.load(open(REAL_FILE, 'r', encoding='utf-8'))
 

@@ -1,2 +1,0 @@
-Real vs Fake Trump Tweet Classifiers
-Notebook trains and compares 4 classifiers (TF-IDF baseline, MLP, BiLSTM Transformer) on the real-vs-fake Trump tweet project.

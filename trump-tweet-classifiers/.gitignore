@@ -1,0 +1,16 @@
+# never commit these
+*.pt
+*.safetensors
+*.joblib
+model_05_distilbert/
+tweets.csv
+fake_tweets_*.json
+
+# Python cruft
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,11 +1,11 @@
 """
 data_loader.py
 --------------
-Shared data loading utility for the real-vs-fake tweet classifier project.
+Shared data loading utility for the real-vs-fake tweet classifier.
 
 What it does:
-- Loads real Trump tweets from tweets.csv (filtering out retweets / deletions
-- Loads fake tweets generated with the 3-gram Markov model
+- Loads real Trump tweets from tweets.csv (filtering out retweets / deletions)
+- Loads fake tweets generated with the 4-gram Markov model
 - Labels them: 1 = real, 0 = fake
 - Returns a consistent train/test split with a fixed random seed so every
   classifier sees the exact same split, making comparisons fair
@@ -15,7 +15,6 @@ import json
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-# Paths — edit these if your files live somewhere else.
 REAL_PATH = "tweets.csv"
 FAKE_PATH = "fake_tweets_3.json"
 
@@ -35,7 +34,7 @@ def load_real_tweets(path: str = REAL_PATH) -> list[str]:
 
 
 def load_fake_tweets(path: str = FAKE_PATH) -> list[str]:
-    """Load 3-gram fake tweets."""
+    """Load 4-gram fake tweets."""
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 

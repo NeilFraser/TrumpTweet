@@ -1,0 +1,14 @@
+Loading datasets...
+Loading GloVe embeddings from glove.6B.100d.txt...
+Successfully mapped 15962/36162 words from GloVe.
+
+Starting Training with GloVe-enhanced Bi-LSTM...
+Epoch 1/5 -> Train Loss: 0.5480 | Val Loss: 0.5297
+Epoch 2/5 -> Train Loss: 0.3717 | Val Loss: 0.3888
+Epoch 3/5 -> Train Loss: 0.2851 | Val Loss: 0.3700
+Epoch 4/5 -> Train Loss: 0.2256 | Val Loss: 0.3542
+Epoch 5/5 -> Train Loss: 0.1769 | Val Loss: 0.3912
+
+Final Test Accuracy with GloVe-enhanced Model: 85.64%
+[SUCCESS] Model saved as 'trump_classifier_glove_final.pth'
+[SUCCESS] Learning curve saved as 'learning_curve_glove.png'

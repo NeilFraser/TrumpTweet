@@ -1,0 +1,20 @@
+
+TRUMP TWEET CLASSIFIER - STATISTICAL REPORT
+-------------------------------------------
+Dataset Statistics:
+- Total Samples: 90908
+- Real Tweets: 45454
+- Fake Tweets (Bigram): 45454
+- Training Set Size: 72726
+- Validation Set Size: 9090
+- Test Set Size: 9092
+
+Training History:
+Epoch 1: Train Loss = 0.6880, Val Loss = 0.6455
+Epoch 2: Train Loss = 0.4820, Val Loss = 0.4299
+Epoch 3: Train Loss = 0.3532, Val Loss = 0.3980
+Epoch 4: Train Loss = 0.2787, Val Loss = 0.4090
+Epoch 5: Train Loss = 0.2125, Val Loss = 0.4118
+
+Final Performance:
+- Test Accuracy: 83.50%

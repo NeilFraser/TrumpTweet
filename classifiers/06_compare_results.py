@@ -2,8 +2,7 @@
 06_compare_results.py
 ---------------------
 Loads all trained models, evaluates them on the SAME test set, and
-plots a comparison. Use this for the presentation.
-
+plots a comparison. 
 
 DEPENDENCIES:
     pip install matplotlib scikit-learn pandas joblib tensorflow
